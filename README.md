@@ -25,8 +25,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution](https://www.frontendmentor.io/solutions/age-calculator-responsive-html-css-js-FbTDFIqfCJ)
-- Live Site URL: [Live Site](https://singhfatehbir.github.io/Age-Calculator-FEM/)
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/tip-calculator-responsive-html-css-js-VisPxPeO9A)
+- Live Site URL: [Live Site](https://singhfatehbir.github.io/Tip-Calculator-FEM/)
 
 ### Built with
 
