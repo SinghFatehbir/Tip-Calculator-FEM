@@ -1,0 +1,264 @@
+:root {
+
+    --color-primary-strong-cyan: hsl(172, 67%, 45%);
+
+    --color-neutral-very-dark-cyan: hsl(183, 100%, 15%);
+    --color-neutral-dark-grayish-cyan: hsl(186, 14%, 43%);
+    --color-neutral-grayish-cyan: hsl(184, 14%, 56%);
+    --color-neutral-light-grayish-cyan: hsl(185, 41%, 84%);
+    --color-neutral-very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --color-neutral-white: hsl(0, 0%, 100%);
+    --color-error: hsl(10, 75%, 64%);
+}
+
+/* css resets start */
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    font: inherit;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* css resets ends */
+
+body {
+    font-family: 'Space Mono', monospace;
+    height: 100dvh;
+    background-color: var(--color-neutral-light-grayish-cyan);
+    display: grid;
+    place-items: center;
+}
+
+.logo {
+    margin: 2.5rem auto;
+}
+
+.container {
+    display: grid;
+    gap: 1.8rem;
+    background-color: var(--color-neutral-white);
+    padding: 1.8rem;
+    max-width: 30rem;
+    margin: 0 1rem;
+    border-radius: 1.5rem 1.5rem 0 0;
+}
+
+/* Mobile first and Desktop changes are in media query */
+
+/* input section */
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 0.4rem;
+}
+
+.bill-label,
+.people-label,
+.tip-section-heading {
+    color: var(--color-neutral-dark-grayish-cyan);
+}
+
+
+input {
+    background-color: var(--color-neutral-very-light-grayish-cyan);
+    color: var(--color-neutral-very-dark-cyan);
+    border: none;
+    height: 2.8rem;
+    padding: 0 1rem;
+    border-radius: 0.3rem;
+    font-size: 1.5rem;
+    text-align: right;
+    caret-color: var(--color-primary-strong-cyan);
+}
+
+input:focus {
+    border: 2px solid var(--color-primary-strong-cyan);
+    outline: none;
+}
+
+input::placeholder {
+    color: var(--color-neutral-grayish-cyan);
+}
+
+input[id^="custom-tip"] {
+    height: auto;
+    padding: 0 0.5rem;
+}
+
+input[id^="custom-tip"]::placeholder {
+    color: var(--color-neutral-very-dark-cyan);
+}
+
+.bill-input-container,
+.people-input-container {
+    position: relative;
+}
+
+.dollar-img,
+.person-img {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+.tip-btns-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 1fr);
+    gap: 1rem;
+}
+
+.tip-section-heading {
+    margin-bottom: 1rem;
+}
+
+.tip-btn {
+    background-color: var(--color-neutral-very-dark-cyan);
+    color: var(--color-neutral-white);
+    border: none;
+    font-size: 1.5rem;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+.active {
+    background-color: var(--color-primary-strong-cyan);
+    color: var(--color-neutral-very-dark-cyan);
+}
+
+.tip-btn:hover {
+    background-color: var(--color-neutral-light-grayish-cyan);
+    color: var(--color-neutral-very-dark-cyan);
+}
+
+.people-error {
+    float: right;
+    color: var(--color-error);
+    display: none;
+}
+
+/* Result section */
+
+.result-section {
+    background-color: var(--color-neutral-very-dark-cyan);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.tip-amount-container,
+.total-amount-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tip-amount-heading,
+.total-amount-heading {
+    color: var(--color-neutral-white);
+}
+
+.tip-amount-heading span,
+.total-amount-heading span {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-neutral-grayish-cyan);
+}
+
+.output {
+    font-size: 2rem;
+    color: var(--color-primary-strong-cyan);
+}
+
+.reset-btn {
+    margin-top: auto;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    color: var(--color-neutral-very-dark-cyan);
+    background-color: var(--color-primary-strong-cyan);
+    border: none;
+    border-radius: 0.4rem;
+    padding: 0.6rem;
+    cursor: pointer;
+    opacity: 0.2;
+}
+
+.reset-btn:hover {
+    opacity: 1;
+    background-color: var(--color-neutral-light-grayish-cyan);
+}
+
+/* Desktop design changes */
+
+@media (min-width: 55rem) {
+
+    .logo {
+        margin: 0 auto 5rem auto;
+    }
+
+    .container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        border-radius: 1.5rem;
+        max-width: 57.5rem;
+    }
+
+    .input-section {
+        padding: 0.8rem;
+    }
+
+    .result-section {
+        padding: 2.5rem;
+    }
+
+    .tip-btns-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .output {
+        font-size: 2.5rem;
+    }
+}
+
+/* footer */
+
+.attribution {
+    font-size: 10px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
